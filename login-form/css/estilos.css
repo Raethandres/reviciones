@@ -1,0 +1,443 @@
+/*
+COLORES
+GRIS: #424242;
+NARANJA: #fa6a31;
+AMARILLO: #ffcd55;
+
+DORADO: #FFB900;
+*/
+body{
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+
+}
+:root {
+  --color-principal: #424242;
+  --color-secundario: #fa6a31;
+  --color-terciario: #FFB900;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+ /* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: var(--color-principal);
+  font-family: Arial;
+  padding: 0px;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar .logo{
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 8px;
+  padding-top: 0px; 
+  padding-bottom: 0px;
+  text-decoration: none;
+  height: 52px;
+}
+.navbar .logo img{
+  width: 80px; 
+  height: 49px; 
+  padding-top: 3px;
+}
+/* The dropdown container */
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+.navbar .logo:hover{
+  background-color: var(--color-principal) !important;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 17px 16px;
+  background-color: inherit;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--color-secundario);
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding: 10px 40px 10px 10px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  background-color: #42424299;/* #fa6a3199; /* #42424299; /* #f9f9f9;*/
+  max-width: 30%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: #fff;
+  background-color: var(--color-secundario);
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #fff;
+  color: #000;
+}
+a .logo :hover{
+  background-color: #f9f9f9;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+/********IMAGENES PRINCIPAL*************/
+#contenido{
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 1%;
+}
+#contenido div{
+  margin: 2px;
+  height: 44vh; 
+  float: left; 
+  overflow:hidden;  
+}
+#imagen1,#imagen2,#imagen3,#imagen4{
+  padding: 0px;
+  margin: 0px;
+  height: 44vh;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background-attachment: fixed;*/
+  display: inline-block;
+
+}
+  /* background-attachment: fixed; */
+
+#imagen1{
+  background-image: url("../img/teatro.jpg");
+}
+#imagen2{
+  background-image: url("../img/festival.png");
+}
+#imagen3{
+  background-image: url("../img/concierto.jpg");
+}
+#imagen4{
+  background-image: url("../img/avicii.png");
+}
+
+.zoom{
+        /* Aumentamos la anchura y altura durante 2 segundos */
+  transition: width 1s, height 1s, transform 1s;
+  -moz-transition: width 1s, height 1s, -moz-transform 1s;
+  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+  -o-transition: width 1s, height 1s,-o-transform 1s;
+}
+.zoom:hover{
+  /* tranformamos el elemento al pasar el mouse por encima al doble de
+           su tamaño con scale(2). */
+  transform : scale(1.2);
+  -moz-transform : scale(1.2);      /* Firefox */
+  -webkit-transform : scale(1.2);   /* Chrome - Safari */
+  -o-transform : scale(1.2);        /* Opera */
+}
+/*********************************************************/
+/************ SING UP *********************************/
+input, .select-especial{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+   /* border: 1px solid #ccc; */
+    box-sizing: border-box;
+}
+.select-cedula{
+  padding: 10px 3px;
+  margin: 8px 0;
+  display: inline-block;
+  /*border: 1px solid #ccc;*/
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.bg-primary input, label{
+  opacity: none;
+}
+#sign-up header, #event header{
+  width: 100%;
+  height: 80px;
+  vertical-align: middle;
+  background-color: var(--color-secundario);
+  text-align: center;
+}
+#sign-up header h1 ,#event header h1{
+  vertical-align: middle;
+  padding-top: 20px;
+  color: #FFF;
+  text-align: center;
+}
+.col-select .col-6{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-select {
+  -ms-flex: 0 0 21.753%;
+      flex: 0 0 21.753%;
+  max-width: 21.753%;
+}
+.col-6 {
+  -ms-flex: 0 0 49.79%;
+      flex: 0 0 49.79%;
+  max-width: 49.79%;
+}
+.col-3{
+  -ms-flex: 0 0 24.69%;%;
+      flex: 0 0 24.69%;%;
+  max-width: 24.69%;%;
+
+}
+.btn{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: var(--color-secundario);
+  background-color: var(--color-secundario);
+  color: #fff;
+  width: 20%;
+}
+#logup a:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+/********************************************************************/
+/*******************Stilos de Home - Tables - navbar*************************************/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table thead tr th{
+  background-color: var(--color-principal);
+  color: #fff;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.home-user img{
+  width: 35px;
+  vertical-align: middle;
+}
+.dropdown .home-user {
+  padding: 8.5px 16px !important;
+}
+#home header,#admin header, #registro-evento header{
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  vertical-align: middle;
+  background-color: var(--color-terciario);
+  text-align: center;
+}
+#home header h1,#admin header h1, #registro-evento header h1{
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FFF;
+  text-align: center;
+  font-size: 2em;
+}
+.dropdown-content{
+
+margin: 0px !important;
+padding: 0px !important;
+}
+.dropdown-content a {
+  float: none;
+  color: #fff;
+  background-color: var(--color-principal);
+  padding: 12px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+.home .dropdown-content a:hover{
+  background-color: var(--color-secundario);
+  color: #fff;
+}
+#home .container .btn,#admin .container .btn,{
+  padding-left: 0px !important;
+  border-color: var(--color-terciario) !important;
+  background-color: var(--color-terciario) !important;
+}
+#home .container .btn:hover,#admin .container .btn:hover{
+  border-color: var(--color-terciario) !important;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+#admin h2, #registro-evento h2{
+  width: 100%;
+  margin-top: 0px;
+}
+#admin #ver,#admin #edit,#user_n,#admin #eliminar, #btn-logup,.btn-logup, #btn-logout,#evento{
+  cursor: pointer;
+}
+#admin #ver:hover{
+  color: green;
+}
+#admin #edit:hover{
+  color: blue;
+}
+#admin #eliminar:hover{
+  color: red;
+}
+#registro-evento .btn{
+  border-color: var(--color-terciario) !important;
+  background-color: var(--color-terciario) !important;
+}
+#registro-evento .btn:hover{
+  border-color: var(--color-terciario) !important;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.rojo{
+  color: red;
+}
+#superponer {
+  position: relative;
+  text-align: center;
+}
+p{
+  width: 100%;
+  padding-left: 10px;
+  text-align: left;
+  margin: 2px;
+}
+.ver h2{
+  width: 100%;
+  padding-left: 10px;
+  background-color: var(--color-terciario);
+  font-size: 1.5em;
+}
+.borde{
+  width: 100%;
+  border-bottom: 2px solid var(--color-principal);
+}
+/******************************************************************/
