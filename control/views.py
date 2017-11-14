@@ -11,9 +11,15 @@ from django.http import JsonResponse,HttpResponse
 #@login_required(login_url="/login/")
 def profesor(request):
 	if request.method == "GET":
-		work=workModel.objects.get(id_w=1)
-		alm=work.alumno.all()
-		vec=[(i.name,i.id_w)for i in alm]
+		try:
+			work=workModel.objects.get(id_w=request.GET["data"])
+			alm=work.alumno.all()
+			vec=[(i.name,i.cedula,i.surname,i.note,i.link,i.check,i.points,i.date)for i in alm]
+		except Exception as e:
+			t=profesorModel.objects.filter(id_a=1)
+			w=t[0].workmodel_set.all()
+			vec=[(i.name,i.id_w)for i in w]
+			
 
 	return JsonResponse({"status":True,"work":vec})
 
