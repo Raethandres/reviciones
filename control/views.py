@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse,HttpResponse
 
 @csrf_exempt
-#@login_required(login_url="/login/")
+@login_required()
 def profesor(request):
 	if request.method == "GET":
 		try:

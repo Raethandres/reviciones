@@ -18,6 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # url(r'^accounts/login/$', include('django.contrib.auth.views.login')),
     url(r'',include('control.urls'),name='control'),
     url(r'',include('log.urls'),name='log'),
     ]
+    #aqui se va analizar la vaina de operacion
