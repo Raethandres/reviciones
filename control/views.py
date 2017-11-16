@@ -72,11 +72,14 @@ def prueba(request):
 @csrf_exempt
 def check(request):
 	if request.method=='POST':
-		print("aja")
 		data=request.POST
-		al=alumnoModel.objects.get(cedula=data["identity"])
-		al.points=data["point"]
-		al.save()
+		print(data)
+		al=alumnoModel.objects.get(cedula=data["id"])
+		gr=alumnoModel.objects.filter(link=al.link)
+		for x in gr:
+			x.points=data["point"]
+			x.check=True
+			x.save()
 		return JsonResponse({"status":True})
 
 @csrf_exempt

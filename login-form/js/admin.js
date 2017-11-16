@@ -109,16 +109,10 @@ $("#id_evaluacion").change(function(){
                   if (work[i][5]==true) {da+=tdi+work[i][5]+tde;da+=tdi+work[i][6]+tde;}
                   else{da+="<td  id=\""+work[i][1]+"ch\"><a onclick=\"send("+work[i][1]+")\" id=\"ver\" alt=\"Ver registro\">View</a></td>";da+=tdi+"<input type='number' id='"+work[i][1]+"poi' value='true'>"+tde;
                   console.log("weweq")
-                  // $("tr #ver").on('click',function(){
-                  //   var mas=$(this).parent().attr("id");
-                  //   console.log(mas);
-                  //   var v=$("#"+work[i][1]+'poi').val();
-                  //   if (v>0) {$(this).attr('checked', true);}else{$(this).attr('checked', false);}
-                  // });
+                 
                 }
                   
                   
-                  // da+="<td id=\""+work[i].id_vo+"\"><a id=\"ver\" alt=\"Ver registro\">View</a><a id=\"edit\" alt=\"Editar registro\">Edit</a><a id=\"eliminar\" alt=\"Eliminar registro\">Clear</a></td>";
                   da+=tre;
                 }
                 $(".table-hover").append("<tbody>"+da+"</tbody>");
@@ -129,25 +123,7 @@ $("#id_evaluacion").change(function(){
               console.error(result);
             }
           });
-  // $("tr #ver").on('click',function(){
-  //     var mas=$(this).parent().attr("id");
-  //   // var m=$("#"+mas).parent().attr("id");
-  //     var d="id_vo="+mas+"&crsf=volet";
-  //     console.log(d);
-  //     console.log("ver registro");
-  //   // $.ajax({
-  //   //         type: 'post',
-  //   //         url: 'http://127.0.0.1:8000/check/',
-  //   //         data:d,
-  //   //         dataType:'JSON',
-  //   //         success: function (result) {
-  //   //           print(result);
-  //   //             if(result.status==true){
-                 
-  //   //             }   
-  //   //         }
-  //   //       });
-  // });
+  
   
 })
 function send(argument) {
@@ -166,7 +142,7 @@ function send(argument) {
             data:d,
             dataType:'JSON',
             success: function (result) {
-              print(result);
+              
                 if(result.status==true){
                  var v=$("#"+argument+'ch').html("true");
                 }   
