@@ -12,15 +12,11 @@ client=None
 @csrf_exempt
 def logi(request):
 	print("ss")
-	# if request.method == 'GET':
-	# 	return JsonResponse({'status':True})
+	
 	if request.method == "POST":
-		# form = LoginForm(request.POST)
+		
 		print(request.POST)
 		rq=request.POST
-		# data=json.loads(request.POST['json_'])
-		# print(form)
-		# return JsonResponse({'status':True})
 
 		if rq:
 			try:
@@ -30,6 +26,8 @@ def logi(request):
 				print(st,"w")
 				if st is not None:
 					if st.is_active:
+						user.log=True
+						user.save()
 						login(request,st)
 						client=st
 						lin=True
@@ -70,6 +68,8 @@ def count(request):
 	print("puta")
 	return JsonResponse({'status':True})
 
+def falla(request):
+	return JsonResponse({'status':True})
 @login_required(login_url="/login/")
 @csrf_exempt
 def logot(request):
