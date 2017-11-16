@@ -34,7 +34,31 @@ $.ajax({
 
 });
 
+max=0
+$("#id_evaluacion").change(function(){
+dat={
+  d:$("#id_evaluacion").val()
+}
+  $.ajax({
 
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/works/',
+            data:dat,
+            dataType:'JSON',
+            success: function (result) {
+                if(result.status==true){
+                   max=result.max
+
+              
+              }
+              
+            },
+            error: function(result){
+              console.error(result);
+            }
+          });
+
+  });
 $("#id_profesor").change(function(){
   console.log($(this).val())
   id={data:$(this).val()}
@@ -48,7 +72,7 @@ $("#id_profesor").change(function(){
                 if(result.status==true){
                    var tri="<option value=\"";
                   var tre="</option>";
-              
+                 
                   for (var i = 0; i < result.work.length; i++) {
                     var da="";
                     da+=tri+result.work[i][1]+"\"id=\""+result.work[i][1]+"\" >";
@@ -69,10 +93,10 @@ $("#id_profesor").change(function(){
 })
 cantidad=0
 $("#mas").click(function(){
-  if (cantidad<5) {
+  if (cantidad<max) {
     cantidad++
     console.log("WW")
-    data='<input type="text" name="name'+cantidad+'" id="id_name" maxlength="20" placeholder="name" class="col-6 arreglos "> <input type="text" name="surname'+cantidad+'" id="id_surname" maxlength="20" placeholder="surname" class="col-6 arreglos "><input type="number" name="identity'+cantidad+'" id="id_identity" maxlength="20" placeholder="C.I" class="col-6 arreglos "><input type="url" name="repo'+cantidad+'" id="id_repo" maxlength="20" placeholder="url of repository" class="col-6 arreglos ">'
+    data='<input type="text" name="name'+cantidad+'" id="id_name" maxlength="20" placeholder="name" class="col-6 arreglos "> <input type="text" name="surname'+cantidad+'" id="id_surname" maxlength="20" placeholder="surname" class="col-6 arreglos "><input type="number" name="identity'+cantidad+'" id="id_identity" maxlength="20" placeholder="C.I" class="col-6 arreglos ">'
     $("#vole").append(data)
   }
  
@@ -90,6 +114,7 @@ $("#subir").click(function(){
             success: function (result) {
                 if(result.status==true){
                   console.log(result);
+                  location.reload();
 
                 }
               

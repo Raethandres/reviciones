@@ -75,7 +75,7 @@ def falla(request):
 def logot(request):
 	if request.method=="POST":
 		print("wswsp")
-		logout(request)
+		logout()
 		return JsonResponse({'status':True})
 	else:
 		return JsonResponse({'status':False})

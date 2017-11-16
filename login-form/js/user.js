@@ -36,88 +36,7 @@ function crearTr(data){
 	if(da.length>1){
     $(".table-hover").append("<tbody>"+da+"</tbody>");
   print("sd");
-  $("tr #eliminar").on('click',function(){
-    var mas=$(this).parent().attr("id");
-    // var m=$("#"+mas).parent().attr("id");
-    var d="id_vo="+mas+"&crsf=voleto";
-    print(d);
-    $.ajax({
-            type: 'delete',
-            url: '../php/back.php',
-            data:d,
-            dataType:'JSON',
-            success: function (result) {
-              print(result);
-              location.reload();
-              
-            }
-          });
-  });
-
-  $("tr #edit").on('click',function(){
-    var mas=$(this).parent().attr("id");
-    // var m=$("#"+mas).parent().attr("id");
-    var d="id_vo="+mas+"&crsf=voleto";
-    $("#c").load('../html/voletos.html');
-    $.ajax({
-            type: 'get',
-            url: '../php/back.php',
-            data:d,
-            dataType:'JSON',
-            success: function (result) {
-              print(result);
-              print("pu");
-                if(result.ok=="entro"){
-                  print(result);
-                  // print("sige");
-                  
-                  var tri="<option value=\"";
-                  var tre="</option>";
-                  for (var i = 0; i < result.vol.length; i++) {
-                    var da="";
-                    da+=tri+result.vol[i].nom+"\"id=\""+result.vol[i].id+"\" >";
-                    da+=result.vol[i].nom;
-                    da+=tre;
-                    $("#id_evento").append(da);
-                    print("ev");
-                    print(da);
-              }
-                  $("#id_serial").val(result.row[0].ser);
-                  $("#id_evento").val(result.row[0].nom);
-                  $("#id_fecha").val(result.row[0].fecha);
-                  $("#id_ubicacion").val(result.row[0].ubicacion);
-                  $("#id_evento").val(result.row[0].nom);
-                
-
-                }
-              
-            }
-          });
-      $("#c").on('click',"#volet",function(){
-      print($('#vole').serialize());
-      
-      $.ajax({
-            type: 'put',
-            url: '../php/back.php',
-            data:$('#vole').serialize(),
-            dataType:'JSON',
-            success: function (result) {
-              print(result);
-                if(result.ok==true){
-                  $("h1").append("<br>exitoso");
-                  if (ad!="1") {
-                    $('#vole')[0].reset();
-                  }
-                  
-                  
-
-
-                }
-              
-            }
-          });
-    });
-  });
+  
   $("tr #ver").on('click',function(){
       var mas=$(this).parent().attr("id");
     // var m=$("#"+mas).parent().attr("id");
@@ -154,27 +73,9 @@ function crearTr(data){
           });
   });
   
-  // $("#eliminar").click(function(){
-  //   var mas=$(this).parent().attr("id");
-  //   var m=$("#"+mas).parent().attr("id");
-  //   var d="id_vo="+m+"&crsf=delete";
-  //   print(d);
-  //   // $.ajax({
-  //   //         type: 'get',
-  //   //         url: '../php/back.php',
-  //   //         data:d,
-  //   //         dataType:'JSON',
-  //   //         success: function (result) {
-  //   //           print(result);
-  //   //           location.href="..";
-              
-  //   //         }
-  //   //       });
-  // });
+ 
   }
 	
-	
-	// $(".table-hover").
 };
 var ad;
 var id;
@@ -256,130 +157,19 @@ $(document).ready(function(){
 		// }
 
 	});
-	$("#cargar-boleto").click(function(){
-		$("#c").load('../html/voletos.html');
-    var d="crsf=evento"
-    $.ajax({
-            type: 'get',
-            url: '../php/back.php',
-            data:d,
-            dataType:'JSON',
-            success: function (result) {
-              print(result);
-                if(result.ok=="entro"){
-              var tri="<option value=\"";
-              var tre="</option>";
-              
-              for (var i = 0; i < result.row.length; i++) {
-                var da="";
-                da+=tri+result.row[i].nom+"\"id=\""+result.row[i].id+"\" >";
-                da+=result.row[i].nom;
-                da+=tre;
-                $("#id_evento").append(da);
-                print("ev");
-                print(da);
-              }
-              
-                }
-              
-            }
-          });
-		$("#c").on('click',"#volet",function(){
-			print($('#vole').serialize());
-      
-			$.ajax({
-            type: 'post',
-            url: '../php/back.php',
-            data:$('#vole').serialize(),
-            dataType:'JSON',
-            success: function (result) {
-            	print(result);
-                if(result.ok==true){
-                	$("h1").append("<br>exitoso");
-                  $('#vole')[0].reset();
-                  
 
 
-                }
-              
-            }
-          });
-		});
-	});
-	$("#btn-logup").click(function(){
-  		print("asas");
-  		var da="id="+id+"&crsf=chus"
-      print(da)
-		$("#c").load('../html/logup.html #sign-up');
-		$.ajax({
-            type: 'get',
-            url: '../php/back.php',
-            data:da,
-            dataType:'JSON',
-            success: function (result) {
-            	print(result);
-                if(result.ok=="entro"){
-                	print(result);
-                  // print("sige");
-                  $("#id_nombre").val(result.row[0].nombre);
-                	$("#id_apellido").val(result.row[0].apellido);
-                  $("#id_cedula").val(result.row[0].cedula);
-                  $("#id_sexo").val(result.row[0].sexo);
-                  $("#id_direccion").val(result.row[0].dire);
-                  $("#id_email").val(result.row[0].email);
-                  $("#id_telefono").val(result.row[0].telefono);
-                  $("#id_username").val(result.row[0].user);
-                  $("#id_pass").val(result.row[0].pass);
-          			// print(result.row);
-          			// $("#tik").html(result.row.nombre);
-          			// $("#usul").html(result.row.nombre);
-          			// $(".dropdown-content").css({display: 'none'});
-
-
-                }
-              
-            }
-          });
-
-
-
-      $("#c").on('click',"#send-up",function(){
-        print("w");
-      $.ajax({
-            type: 'put',
-            url: '../php/back.php',
-            data: $('#logup').serialize(),
-            dataType:'JSON',
-            success: function (result) {
-              print(result);
-                if(result.ok==true){
-                  location.reload();
-                  $("h1").html("guardado exitoso");
-
-                // print(result.row);
-                // $("#tik").html(result.row.nombre);
-                // $("#usul").html(result.row.nombre);
-                // $(".dropdown-content").css({display: 'none'});
-
-
-                }
-              
-            }
-          });
-    });
-
-    });
   //Carga html del registro de evento-Admin
   $("#evento").click(function(){
       print("Entro a evento registro");
-    $("#c").load('../html/evento.html #registro-event');
+    $("#c").load('vento.html');
     
 		$("#c").on('click',"#cargar-evento",function(){
 			print("ss");
       
 			$.ajax({
             type: 'post',
-            url: '../php/back.php',
+            url: 'http://127.0.0.1:8000/prueba/',
             data:$('#resgistro-evento').serialize(),
             dataType:'JSON',
             success: function (result) {

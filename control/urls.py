@@ -6,6 +6,8 @@ urlpatterns= [
 	url(r'^teach/$', views.getProfesor,name="teach"),
 	url(r'^works/$', views.getWork,name="work"),
 	url(r'^salum/$', views.alumnos,name="alumnos"),
+	url(r'^prueba/$', views.prueba,name="prueba"),
+	url(r'^check/$', views.check,name="check"),
 
 
 	]
