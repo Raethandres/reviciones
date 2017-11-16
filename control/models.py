@@ -1,4 +1,5 @@
 from django.db import models
+from log.models import UserModel
 
 class alumnoModel(models.Model):
 	cedula=models.IntegerField()
@@ -17,6 +18,7 @@ class alumnoModel(models.Model):
 class profesorModel(models.Model):
 	id_a=models.AutoField(primary_key=True)
 	name=models.CharField(max_length=20)
+	use=models.OneToOneField(UserModel, on_delete=models.CASCADE, null=True)
 	
 	
 	def __str__(self):
@@ -25,7 +27,7 @@ class profesorModel(models.Model):
 class workModel(models.Model):
 	id_w=models.AutoField(primary_key=True)
 	name=models.CharField(max_length=20)
-	alumno=models.ManyToManyField(alumnoModel)
+	alumno=models.ManyToManyField(alumnoModel,null=True)
 	profesor=models.ForeignKey(profesorModel)
 	
 	def __str__(self):

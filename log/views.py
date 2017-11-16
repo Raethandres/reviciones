@@ -2,8 +2,10 @@ from django.shortcuts import render
 from .forms import *
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate
+from .decorator import login
 import json
+from .models import UserModel
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse,HttpResponse
 
@@ -26,9 +28,7 @@ def logi(request):
 				print(st,"w")
 				if st is not None:
 					if st.is_active:
-						user.log=True
-						user.save()
-						login(request,st)
+						login(user)
 						client=st
 						lin=True
 						print(st,"j")

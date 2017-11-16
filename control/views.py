@@ -1,7 +1,7 @@
 from .models import alumnoModel,workModel,profesorModel
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from log.decorator import login_required
+from log.decorator import login_required,log
 from django.contrib.auth import authenticate,login,logout
 import json
 from django.views.decorators.csrf import csrf_exempt
@@ -16,7 +16,9 @@ def profesor(request):
 			alm=work.alumno.all()
 			vec=[(i.name,i.cedula,i.surname,i.note,i.link,i.check,i.points,i.date)for i in alm]
 		except Exception as e:
-			t=profesorModel.objects.filter(id_a=1)
+			user=log()
+
+			t=profesorModel.objects.get(id_a=user.profesormodel.name)
 			w=t[0].workmodel_set.all()
 			vec=[(i.name,i.id_w)for i in w]
 			
