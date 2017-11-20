@@ -81,7 +81,7 @@ $("#user_n").click(function(){
   });
 
 $("#id_evaluacion").change(function(){
-  $(".table-hover").html(" ")
+  $(".cuerpo").html(" ")
   id={data:$(this).val()}
   console.log(id)
   $.ajax({
@@ -115,7 +115,7 @@ $("#id_evaluacion").change(function(){
                   
                   da+=tre;
                 }
-                $(".table-hover").append("<tbody>"+da+"</tbody>");
+                $(".cuerpo").append(da);
               }
               
             },

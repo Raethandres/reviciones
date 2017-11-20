@@ -440,4 +440,8 @@ p{
   width: 100%;
   border-bottom: 2px solid var(--color-principal);
 }
+#user_np{
+  text-align: center;
+  font-family: 'Play', cursive;
+}
 /******************************************************************/

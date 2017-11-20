@@ -4,12 +4,13 @@
 
 	<meta charset="utf-8">
   <link rel="icon" type="image/png" href="img/icon.png">
-	<title></title>
+	<title>Registro de evaluaciones</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css?family=DancingScript&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
 <body>
-	 <div class="navbar" >
-	 <div class="dropdown home">
+	<div class="navbar" >
+	<div class="dropdown home">
     		<button class="dropbtn home-user">
           <img src="img/user.png" />
     		</button>
@@ -17,7 +18,7 @@
             <a id="btn-logout">Salir</a>
     	</div>
   	</div>
-    <a id="evento">Risgistrar evento</a>
+    <a id="evento">Risgistrar Evaluciación</a>
  		<a  id="user_n" ></a>
   	<a href="#" class="logo">
       <img src="img/logo.png" class="zoom"/>
@@ -35,13 +36,13 @@
  <div id="c">
    <section id="admin">
 	<header>
-		<h1>Zona del administador<br> <p id="user_np"></p></h1>
+		<h1>Zona del Profesor<br> <p id="user_np"></p></h1>
 	</header>
 	<div class="container">
 		<div class="row">
-      <h2>Listado de asistencia</h2>
+      <h2>Listado de evaluciones</h2>
       <select name="evaluacion" id="id_evaluacion" class="col-6 arreglos select-especial">
-          <option value="evento_vacio" selected>Select Event</option>
+          <option value="evento_vacio" selected>Select Evaluacion</option>
       </select>
       <table class="table-hover">
         <thead>
@@ -55,6 +56,9 @@
           <th>puntos</th>
         </tr>
         </thead>
+        <tbody class="cuerpo">
+          
+        </tbody>
       </table>
       <br>
 		</div>
