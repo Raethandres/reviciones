@@ -96,7 +96,7 @@ $("#mas").click(function(){
   if (cantidad<max) {
     cantidad++
     console.log("WW")
-    data='<input type="text" name="name'+cantidad+'" id="id_name" maxlength="20" placeholder="name" class="col-6 arreglos "> <input type="text" name="surname'+cantidad+'" id="id_surname" maxlength="20" placeholder="surname" class="col-6 arreglos "><input type="number" name="identity'+cantidad+'" id="id_identity" maxlength="20" placeholder="C.I" class="col-6 arreglos ">'
+    data='<input type="text" name="name'+cantidad+'" id="id_name" maxlength="20" placeholder="Name" class="col-4 arreglos "> <input type="text" name="surname'+cantidad+'" id="id_surname" maxlength="20" placeholder="Surname" class="col-4 arreglos "><input type="number" name="identity'+cantidad+'" id="id_identity" maxlength="20" placeholder="C.I" class="col-4 arreglos ">'
     $("#vole").append(data)
   }
  

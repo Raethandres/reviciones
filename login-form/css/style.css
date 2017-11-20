@@ -110,8 +110,12 @@ input {
   margin: 0 auto;
   padding: 4px 0;
   width: 100px;
+  text-align: center;
 }
 
 #login #sum:hover {
   background: #28ad63;
+}
+#sum{
+  cursor: pointer;
 }

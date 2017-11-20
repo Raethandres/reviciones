@@ -248,27 +248,27 @@ input, .select-especial{
   padding: 10px 3px;
   margin: 8px 0;
   display: inline-block;
-  /*border: 1px solid #ccc;*/
+  border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 1em;
 }
 .bg-primary input, label{
   opacity: none;
 }
-#sign-up header, #event header{
+#sign-up header, #event header, #registro-event header h1{
   width: 100%;
   height: 80px;
   vertical-align: middle;
   background-color: var(--color-secundario);
   text-align: center;
 }
-#sign-up header h1 ,#event header h1{
+#sign-up header h1 ,#event header h1, #registro-event header h1{
   vertical-align: middle;
   padding-top: 20px;
   color: #FFF;
   text-align: center;
 }
-.col-select .col-6{
+.col-select .col-6,.col-12,.col-4{
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -284,6 +284,16 @@ input, .select-especial{
   -ms-flex: 0 0 49.79%;
       flex: 0 0 49.79%;
   max-width: 49.79%;
+}
+.col-4 {
+  -ms-flex: 0 0 33.0%;
+      flex: 0 0 33.0%;
+  max-width: 33.0%;
+}
+.col-12 {
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+  max-width: 100%;
 }
 .col-3{
   -ms-flex: 0 0 24.69%;%;
@@ -396,7 +406,7 @@ padding: 0px !important;
   width: 100%;
   margin-top: 0px;
 }
-#admin #ver,#admin #edit,#user_n,#admin #eliminar, #btn-logup,.btn-logup, #btn-logout,#evento{
+#admin #ver,#admin #edit,#user_n,#admin #eliminar, #btn-logup,.btn-logup, #btn-logout,#evento,#sum{
   cursor: pointer;
 }
 #admin #ver:hover{
